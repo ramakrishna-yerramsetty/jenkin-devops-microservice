@@ -1,36 +1,23 @@
+
 //Declaritive
 pipeline {
 	agent any
 		stages {
-		stage('Build'){
-			steps {	
-				echo "Build"
+			stage('Build'){ steps {	echo "Build"} }
+			stage('Test'){steps {echo "Test"}}
+			stage('Integration Test'){ steps { echo "Integration Test" } }
+			} 
+			post {
+				always {
+					echo 'I am Ram and I am the BEST'
 				}
-			}
-
-		stage('Test'){
-			steps {	
-				echo "Test"
+				success {
+					echo 'I am successful'
 				}
-			}
-
-		stage('Integration Test'){
-			steps {	
-				echo "Integration Test"
-				}
-			}
-
-		} post {
-			always {
-				echo 'I am Ram and I am the BEST'
-				}
-			success {
-				echo 'I am successful'
-				}
-			failure {
+				failure {
 					echo 'I am failure'
 				}
-
 			}
-	
-	}
+	}		
+}
+
