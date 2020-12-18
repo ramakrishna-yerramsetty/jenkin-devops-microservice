@@ -20,5 +20,17 @@ pipeline {
 				}
 			}
 
-		}
+		} post {
+			always {
+				echo 'I am Ram and I am the BEST'
+				}
+			success {
+				echo 'I am successful'
+				}
+			}
+
+			failure {
+					echo 'I am failure'
+				}
+	
 	}
